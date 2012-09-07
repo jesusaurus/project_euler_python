@@ -12,14 +12,14 @@ def findPrimes(m):
             f = factor(x)
             if len(f) == 1:
                 primes.extend(f)
-        print "last 5 primes:"
-        print primes[-5:]
+        print "number of primes found: ",
+        print len(primes)
+        print "last prime: ",
+        print primes[-1]
         print
 
 def factor(n):
     result = []
-
-    findPrimes(n**0.5)
 
     for p in primes:
         if n > p and n % p == 0:
@@ -29,4 +29,8 @@ def factor(n):
 
     return [n]
         
+print magick
+print magick**0.5
+print
+findPrimes(magick**0.5)
 print factor(magick)
