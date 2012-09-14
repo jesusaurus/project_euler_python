@@ -1,7 +1,5 @@
 import math
 
-magick = 600851475143
-
 #initial set of primes
 primes = [ 2, 3, 5, 7, 11 ]
 
@@ -29,8 +27,5 @@ def factor(n):
 
     return [n]
 
-print magick
-print magick**0.5
-print
-findPrimes(magick**0.5)
-print factor(magick)
+findPrimes(2000000)
+print sum(primes)
