@@ -12,20 +12,26 @@ def factor(m):
             return result
     return [m]
 
+def flen(s):
+    f = factor(s)
+    l = len(f)
+    del f
+    return l
+
 x = 10
 number = triangle(x)
 
-while len(factor(number)) < 500:
+while flen(number) < 500:
     x **= 2
     number = triangle(x)
 print "went too far"
 
-while len(factor(number)) >= 500:
+while flen(number) >= 500:
     x /= 2
     number = triangle(x)
 print "cut back too far"
 
-while len(factor(number)) < 500:
+while flen(number) < 500:
     x += 1
     number = triangle(x)
 print "found it"
