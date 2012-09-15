@@ -10,6 +10,10 @@ def findPrimes(m):
             f = factor(x)
             if len(f) == 1:
                 primes.extend(f)
+            if primes[-1] > m:
+                #grabbed one too many
+                primes.pop()
+                break
         print "number of primes found: ",
         print len(primes)
         print "last prime: ",
