@@ -8,7 +8,9 @@ def factor(m):
     for i in range(2,m-1):
         if m % i == 0:
             result.append(i)
-    return result
+            result.extend(factor(i/m))
+            return result
+    return [m]
 
 x = 10
 number = triangle(x)
