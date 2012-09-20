@@ -13,14 +13,13 @@ def factor(m):
 x = 2
 number = triangle(x)
 
-while factor(number) < 500:
-    try:
+try:
+    while factor(number) < 500:
         x **= 2
         number = triangle(x)
-    except MemoryError:
-        print "Not enough memory for %i\n" % x
-        break
-print "went too far"
+    print "went too far"
+except MemoryError:
+    print "Not enough memory for %i\n" % x
 
 while factor(number) >= 500:
     x /= 2
