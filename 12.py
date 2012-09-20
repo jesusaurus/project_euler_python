@@ -5,9 +5,11 @@ def triangle(n):
 
 def factor(m):
     result = 0
-    for i in range(2,m-1):
+    i = 2
+    while i < (m-1):
         if m % i == 0:
             result += 1
+        i += 1
     return result
 
 x = 2
