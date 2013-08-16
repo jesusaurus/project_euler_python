@@ -1,17 +1,22 @@
-fib0 = 1
-fib1 = 2
-total = 2
+def _fib():
+    fib0 = 1
+    yield fib0
+    fib1 = 2
+    yield fib1
 
-while 1:
-    fib0 += fib1
-    if fib0 > 4000000:
-        break
-    if fib0 % 2 == 0:
-        total += fib0
-    fib1 += fib0
-    if fib1 > 4000000:
-        break
-    if fib1 % 2 == 0:
-        total += fib1
+    while True:
+        fib0 += fib1
+        yield fib0
+        fib1 += fib0
+        yield fib1
 
-print total
+
+def fib(x):
+    for f in _fib():
+        if f > x:
+            break
+        elif f % 2 == 0:
+            yield f
+
+
+print sum(fib(4000000))
