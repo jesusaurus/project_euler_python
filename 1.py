@@ -7,9 +7,4 @@ def _gen(n):
             yield x
         x += 1
 
-
-total = 0
-for x in _gen(1000):
-        total += x
-
-print total
+print sum(_gen(1000))
